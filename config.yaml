@@ -1,6 +1,7 @@
 actions:
   pre:
     vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/{undodir,bundle} ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
+    ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
   vundle: vim +VundleClean! +VundleInstall +VundleInstall! +qall
 config:
   backup: true
@@ -15,16 +16,22 @@ config:
   workdir: ~/.config/dotdrop
 dotfiles:
   f_vim_vimrc:
-    dst: ~/.vim/vimrc
-    src: vim/vimrc
     actions:
       - vundle-install
       - vundle
+    dst: ~/.vim/vimrc
+    src: vim/vimrc
   f_xdefaults:
     dst: ~/.Xdefaults
     src: Xdefaults
+  f_zshrc:
+    actions:
+      - ohmyzsh
+    dst: ~/.zshrc
+    src: zshrc
 profiles:
   warbird:
     dotfiles:
     - f_xdefaults
     - f_vim_vimrc
+    - f_zshrc
