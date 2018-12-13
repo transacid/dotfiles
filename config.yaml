@@ -17,6 +17,9 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_bin_lock.sh:
+    dst: ~/bin/lock.sh
+    src: bin/lock.sh
   f_config_qtile_config.py:
     dst: ~/.config/qtile/config.py
     src: config/qtile/config.py
@@ -41,3 +44,4 @@ profiles:
     - f_vim_vimrc
     - f_zshrc
     - f_config_qtile_config.py
+    - f_bin_lock.sh
