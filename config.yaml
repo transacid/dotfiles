@@ -1,7 +1,9 @@
 actions:
   pre:
-    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/{undodir,bundle} ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
-    ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git
+      ~/.oh-my-zsh
+    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/{undodir,bundle} ; git clone
+      https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
   vundle: vim +VundleClean! +VundleInstall +VundleInstall! +qall
 config:
   backup: true
@@ -15,10 +17,13 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_config_qtile_config.py:
+    dst: ~/.config/qtile/config.py
+    src: config/qtile/config.py
   f_vim_vimrc:
     actions:
-      - vundle-install
-      - vundle
+    - vundle-install
+    - vundle
     dst: ~/.vim/vimrc
     src: vim/vimrc
   f_xdefaults:
@@ -26,7 +31,7 @@ dotfiles:
     src: Xdefaults
   f_zshrc:
     actions:
-      - ohmyzsh
+    - ohmyzsh
     dst: ~/.zshrc
     src: zshrc
 profiles:
@@ -35,3 +40,4 @@ profiles:
     - f_xdefaults
     - f_vim_vimrc
     - f_zshrc
+    - f_config_qtile_config.py
