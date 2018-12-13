@@ -1,3 +1,7 @@
+actions:
+  pre:
+    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/{undodir,bundle} ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
+  vundle: vim +VundleClean! +VundleInstall +VundleInstall! +qall
 config:
   backup: true
   banner: true
@@ -10,6 +14,12 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  f_vim_vimrc:
+    dst: ~/.vim/vimrc
+    src: vim/vimrc
+    actions:
+      - vundle-install
+      - vundle
   f_xdefaults:
     dst: ~/.Xdefaults
     src: Xdefaults
@@ -17,3 +27,4 @@ profiles:
   warbird:
     dotfiles:
     - f_xdefaults
+    - f_vim_vimrc
