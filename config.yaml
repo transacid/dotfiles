@@ -17,6 +17,9 @@ config:
   showdiff: true
   workdir: ~/.config/dotdrop
 dotfiles:
+  d_config_powerline:
+    dst: ~/.config/powerline
+    src: config/powerline
   f_bin_lock.sh:
     dst: ~/bin/lock.sh
     src: bin/lock.sh
@@ -38,8 +41,12 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
+  w0aju:
+    dotfiles:
+    - d_config_powerline
   warbird:
     dotfiles:
+    - d_config_powerline
     - f_xdefaults
     - f_vim_vimrc
     - f_zshrc
