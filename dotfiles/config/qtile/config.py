@@ -99,7 +99,7 @@ screens = [
                 widget.Sep(size_percent=70, foreground='#126e00'),
                 widget.Battery(low_percentage=0.1),
                 widget.Sep(size_percent=70, foreground='#126e00'),
-                widget.Clock(format='%Y-%m-%d'),
+                widget.Clock(format='%a, %d %b %Y'),
                 widget.Clock(format='%H:%M:%S', foreground='#ffffff'),
             ],
             19,
