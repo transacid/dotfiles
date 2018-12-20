@@ -23,6 +23,9 @@ dotfiles:
   f_bin_lock.sh:
     dst: ~/bin/lock.sh
     src: bin/lock.sh
+  f_config_kitty_kitty.conf:
+    dst: ~/.config/kitty/kitty.conf
+    src: config/kitty/kitty.conf
   f_config_qtile_config.py:
     dst: ~/.config/qtile/config.py
     src: config/qtile/config.py
@@ -44,6 +47,7 @@ profiles:
   w0aju:
     dotfiles:
     - d_config_powerline
+    - f_config_kitty_kitty.conf
   warbird:
     dotfiles:
     - d_config_powerline
