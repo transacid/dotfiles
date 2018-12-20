@@ -20,6 +20,9 @@ dotfiles:
   d_config_powerline:
     dst: ~/.config/powerline
     src: config/powerline
+  d_config_ranger:
+    dst: ~/.config/ranger
+    src: config/ranger
   f_bin_lock.sh:
     dst: ~/bin/lock.sh
     src: bin/lock.sh
@@ -48,6 +51,7 @@ profiles:
     dotfiles:
     - d_config_powerline
     - f_config_kitty_kitty.conf
+    - d_config_ranger
   warbird:
     dotfiles:
     - d_config_powerline
