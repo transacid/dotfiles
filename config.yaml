@@ -60,3 +60,5 @@ profiles:
     - f_zshrc
     - f_config_qtile_config.py
     - f_bin_lock.sh
+    - f_config_kitty_kitty.conf
+    - d_config_ranger
