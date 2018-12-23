@@ -1,6 +1,8 @@
 scriptencoding utf-8
 set encoding=utf-8
 " ^^ Please leave the above line at the start of the file.
+"" kitty needs this https://sw.kovidgoyal.net/kitty/faq.html#using-a-color-theme-with-a-background-color-does-not-work-well-in-vim
+let &t_ut=''
 
 syntax on
 set hlsearch
