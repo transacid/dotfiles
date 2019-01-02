@@ -1,7 +1,7 @@
 actions:
   pre:
     ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
-    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/undodir ~/.vim/bundle ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
+    vundle-install: test -d ~/.vim || mkdir -p ~/.vim/undodir ~/.vim/bundle ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
   vundle: vim +VundleClean! +VundleInstall +VundleInstall! +qall
 config:
   backup: true
