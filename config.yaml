@@ -1,9 +1,7 @@
 actions:
   pre:
-    ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git
-      ~/.oh-my-zsh
-    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/{undodir,bundle} ; git clone
-      https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
+    ohmyzsh: test -d ~/.oh-my-zsh || git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    vundle-install: test -d ~/.vim || (mkdir -p ~/.vim/undodir ~/.vim/bundle ; git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim)
   vundle: vim +VundleClean! +VundleInstall +VundleInstall! +qall
 config:
   backup: true
@@ -47,11 +45,12 @@ dotfiles:
     dst: ~/.zshrc
     src: zshrc
 profiles:
-  w0aju:
+  w0avu:
     dotfiles:
     - d_config_powerline
     - f_config_kitty_kitty.conf
     - d_config_ranger
+    - f_vim_vimrc
   warbird:
     dotfiles:
     - d_config_powerline
